@@ -7,7 +7,7 @@ This is a mini data app that identifies potentially risky ecommerce orders using
 
 Ecommerce platforms deal with massive return volumes. To minimize profit loss, this project helps **detect risky orders early** based on factors like:
 
-- High product quantities
+- Delivery duration
 - Low review scores
 - High freight charges
 
