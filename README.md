@@ -1,50 +1,32 @@
-🚨 Return Risk Analyzer — SQL + Flask Mini Project
-A lightweight web-based monitoring tool that simulates risk analysis in ecommerce logistics. Built using MySQL, Flask, SQLAlchemy, and HTML/CSS, the app flags high-risk orders and freight-heavy transactions, helping operational teams take quick, data-driven actions.
 
-📌 Project Objective
-This project simulates a real-world scenario where ecommerce platforms need to identify risky orders before shipment. The tool flags orders with:
+# 🛡️ Return Risk Analyzer (SQL + Flask)
 
-High product quantity (e.g., bulk orders prone to returns)
+This is a mini data app that identifies potentially risky ecommerce orders using SQL logic and displays alerts through a Flask-based web interface.
 
-High freight charges (e.g., potential shipping inefficiencies)
+## 🚀 Project Overview
 
-⚙️ Real-time Flask interface allows teams to:
+Ecommerce platforms deal with massive return volumes. To minimize profit loss, this project helps **detect risky orders early** based on factors like:
 
-View latest flagged orders
+- High product quantities
+- Low review scores
+- High freight charges
 
-Detect abnormal freight cost
+## 🔧 Tech Stack
 
-Expand rules for future fraud or return risk alerts
+- **MySQL** for relational database and logic
+- **Flask** for web app
+- **Pandas + SQLAlchemy** for data handling
+- **HTML/CSS (Jinja2)** for frontend rendering
 
-🧠 Business Value
-✔️ Prevention of costly returns by catching suspicious patterns early
-✔️ Improved fulfillment accuracy via real-time dashboards
-✔️ Operational efficiency by reducing manual order review
-✔️ Easily extendable for fraud, churn, or refund tracking logic
+## 📦 Features
 
-🛠 Tech Stack
-Component	Description
-🐬 MySQL	Relational database to store and query orders
-🐍 Flask	Python web framework for lightweight dashboards
-🔗 SQLAlchemy	ORM to connect MySQL with Python
-📊 Pandas	Data processing and logic filtering
-💻 HTML/CSS	UI display of order tables
+- ⚠️ **Risk Alerts Page** – View flagged high-return-risk orders from the database  
+- 📦 **High Freight Orders** – View orders with freight cost over a threshold  
+- 🔄 **Auto-refresh enabled** – New risky orders added in MySQL will reflect every 10 seconds  
+- 💡 **Expandable** – Add dashboard, filters, or charts with Streamlit/Plotly later
 
-🚀 Features
-Feature	Description
-⚠️ Show Risky Orders	Based on order quantity or predefined rules
-📦 Show High Freight Orders	Freight cost > ₹150 flagged as optimization needed
-🔄 Auto Refresh	Updates dashboards every 10s to simulate real-time
-🧩 Modular Logic	Easily update or add more risk detection criteria
+## 📁 Folder Structure
 
-🧪 Sample Rules Used
--- Risky if quantity >= 5 or review score <= 2
-SELECT * FROM orders WHERE quantity >= 5 OR review_score <= 2;
-
--- Freight-heavy if freight value > 150
-SELECT * FROM orders WHERE freight_value > 150;
-
-📂 Folder Structure
 /return-risk-analyzer
 │
 ├── app.py                    # Flask application
