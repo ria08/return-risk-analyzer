@@ -27,17 +27,18 @@ Ecommerce platforms deal with massive return volumes. To minimize profit loss, t
 
 ## 📁 Folder Structure
 
+```
 return-risk-analyzer/
 │
-├── app.py # Flask backend
+├── app.py                     # Flask backend
 ├── templates/
-│ ├── base.html # Shared layout
-│ ├── index.html # Homepage
-│ ├── alerts.html # Risky orders based on quantity/reviews
-│ └── freight.html # High freight value orders
-├── static/ # CSS / Images (if any)
-├── requirements.txt # Python dependencies
-├── schema.sql # (Optional) MySQL table structure
+│   ├── base.html              # Shared layout
+│   ├── index.html             # Homepage
+│   ├── alerts.html            # Risky orders based on quantity/reviews
+│   └── freight.html           # High freight value orders
+├── schema.sql                 # (Optional) MySQL table structure
+```
+
 💻 How to Run Locally
 
 Clone the repo
