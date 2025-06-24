@@ -30,13 +30,17 @@ Ecommerce platforms deal with massive return volumes. To minimize profit loss, t
 ```
 return-risk-analyzer/
 │
-├── app.py                     # Flask backend
-├── templates/
-│   ├── base.html              # Shared layout
-│   ├── index.html             # Homepage
-│   ├── alerts.html            # Risky orders based on quantity/reviews
-│   └── freight.html           # High freight value orders
-├── schema.sql                 # (Optional) MySQL table structure
+├── risk_analyzer.py          # Flask backend with DB logic
+├── .env                      # Environment variables (DB creds, secret keys)
+├── .gitignore                # Ignore .env, __pycache__, etc.
+├── schema.sql                # (Optional) MySQL table structure
+│
+├── templates/                # HTML templates using Jinja2
+│   ├── base.html             # Shared layout and styles
+│   ├── index.html            # Dashboard homepage
+│   ├── alerts.html           # Risky orders (e.g., low reviews, high quantity)
+│   └── freight.html          # Orders with high freight value
+
 ```
 
 ## 🖥️ Running Locally
