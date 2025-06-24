@@ -15,7 +15,7 @@ Ecommerce platforms deal with massive return volumes. To minimize profit loss, t
 
 - **MySQL** for relational database and logic
 - **Flask** for web app
-- **Pandas + SQLAlchemy** for data handling
+- **Pandas + PyMySQL** for data handling
 - **HTML/CSS (Jinja2)** for frontend rendering
 
 ## 📦 Features
