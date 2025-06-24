@@ -41,12 +41,8 @@ return-risk-analyzer/
 
 💻 How to Run Locally
 
-Clone the repo
-git clone https://github.com/yourusername/return-risk-analyzer.git
+git clone https://github.com/your-username/return-risk-analyzer.git
 cd return-risk-analyzer
-
-Install dependencies
-pip install -r requirements.txt
 
 Run the app
 python app.py
