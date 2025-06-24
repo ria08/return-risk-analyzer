@@ -45,11 +45,12 @@ return-risk-analyzer/
 
 ## 🖥️ Running Locally
 
-This app connects to a MySQL database using environment variables stored in a `.env` file. Follow the steps below to set it up:
+If you want to run this app in your system, follow these steps: 
 
 ### ⚙️ Step 1: Create the MySQL Database
 
-Set up your MySQL database with the required tables. If you have a `schema.sql` file, you can use:
+This app connects to a MySQL database using environment variables stored in a `.env` file. Set up your MySQL database with the required tables. 
+If you have a `schema.sql` file, you can use:
 
 ```bash
 mysql -u root -p return_risk_analyzer < schema.sql
@@ -61,7 +62,7 @@ Replace `return_risk_analyzer` with your actual database name if it's different.
 
 ### 🔐 Step 2: Create a `.env` File
 
-At the root of your project, create a file named `.env` with the following content:
+In the root folder of your project, create a file named `.env` with the following content:
 
 ```env
 DB_HOST=localhost
@@ -76,7 +77,7 @@ DB_NAME=return_risk_analyzer
 
 ### 🔗 Step 3: How the App Connects to the Database
 
-The following function is already set up in your code to use environment variables securely:
+The following function is already set up in the code to use environment variables securely:
 
 ```python
 def get_connection():
@@ -90,7 +91,7 @@ def get_connection():
     )
 ```
 
-No need to hardcode credentials — the app reads them directly from `.env`.
+No need to hardcode credentials as the app reads them directly from `.env`.
 
 ---
 
@@ -101,9 +102,6 @@ Use `requirements.txt` to install all dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
-That's it! Your Flask app is now ready to securely connect to your MySQL database using environment variables.
-
 
 ### 5. Run the Flask app
 
