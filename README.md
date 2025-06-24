@@ -39,16 +39,45 @@ return-risk-analyzer/
 ├── schema.sql                 # (Optional) MySQL table structure
 ```
 
-💻 How to Run Locally
+## 🖥️ Running Locally
 
+### 1. Clone this repo
+
+```bash
 git clone https://github.com/your-username/return-risk-analyzer.git
 cd return-risk-analyzer
+```
 
-Run the app
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure DB
+
+Update your MySQL credentials in `app.py`:
+
+```python
+connection = pymysql.connect(
+    host='localhost',
+    user='your_user',
+    password='your_password',
+    db='your_db_name',
+    charset='utf8mb4',
+    cursorclass=pymysql.cursors.DictCursor
+)
+```
+
+### 5. Run the Flask app
+
+```bash
 python app.py
+```
 
-Visit in browser
-Open http://127.0.0.1:5000 to use the dashboard.
+Visit [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser.
+
 
 
 
