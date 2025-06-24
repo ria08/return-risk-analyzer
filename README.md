@@ -45,34 +45,65 @@ return-risk-analyzer/
 
 ## 🖥️ Running Locally
 
-### 1. Clone this repo
+This app connects to a MySQL database using environment variables stored in a `.env` file. Follow the steps below to set it up:
+
+### ⚙️ Step 1: Create the MySQL Database
+
+Set up your MySQL database with the required tables. If you have a `schema.sql` file, you can use:
 
 ```bash
-git clone https://github.com/your-username/return-risk-analyzer.git
-cd return-risk-analyzer
+mysql -u root -p return_risk_analyzer < schema.sql
 ```
 
+Replace `return_risk_analyzer` with your actual database name if it's different.
 
-### 3. Install dependencies
+---
+
+### 🔐 Step 2: Create a `.env` File
+
+At the root of your project, create a file named `.env` with the following content:
+
+```env
+DB_HOST=localhost
+DB_USER=your_mysql_username
+DB_PASSWORD=your_mysql_password
+DB_NAME=return_risk_analyzer
+```
+
+✅ Make sure `.env` is included in your `.gitignore` file to prevent pushing sensitive info to GitHub.
+
+---
+
+### 🔗 Step 3: How the App Connects to the Database
+
+The following function is already set up in your code to use environment variables securely:
+
+```python
+def get_connection():
+    return pymysql.connect(
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        db=os.getenv("DB_NAME"),
+        charset='utf8mb4',
+        cursorclass=pymysql.cursors.DictCursor
+    )
+```
+
+No need to hardcode credentials — the app reads them directly from `.env`.
+
+---
+
+### 📦 Step 4: Install Required Python Packages
+
+Use `requirements.txt` to install all dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure DB
+That's it! Your Flask app is now ready to securely connect to your MySQL database using environment variables.
 
-Update your MySQL credentials in `app.py`:
-
-```python
-connection = pymysql.connect(
-    host='localhost',
-    user='your_user',
-    password='your_password',
-    db='your_db_name',
-    charset='utf8mb4',
-    cursorclass=pymysql.cursors.DictCursor
-)
-```
 
 ### 5. Run the Flask app
 
@@ -80,7 +111,7 @@ connection = pymysql.connect(
 python app.py
 ```
 
-Visit [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser.
+Visit (http://127.0.0.1:5000/) in your browser.
 
 
 
