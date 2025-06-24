@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}⚠️ Risky Orders{% endblock %}
+
+{% block head_extra %}
+    <meta http-equiv="refresh" content="10">
+{% endblock %}
+
+{% block content %}
+    <h1>⚠️ Risky Orders</h1>
+
+    {% if orders %}
+    <table class="dataframe">
+        <thead>
+            <tr>
+                {% for key in orders[0].keys() %}
+                <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in orders %}
+            <tr>
+                {% for value in row.values() %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No risky orders found.</p>
+    {% endif %}
+{% endblock %}
+
+
+
