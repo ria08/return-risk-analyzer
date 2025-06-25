@@ -3,7 +3,7 @@
 
 This is a mini data app that identifies potentially risky ecommerce orders using SQL logic and displays alerts through a Flask-based web interface.
 
-Check out the entire project description here: 
+Check out the project walkthrough here: 
 
 https://medium.com/@singhria.0829/building-a-real-time-order-return-risk-analyzer-with-mysql-and-flask-2fc72e948adf
 
