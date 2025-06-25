@@ -22,7 +22,7 @@ Ecommerce platforms deal with massive return volumes. To minimize profit loss, t
 
 - ⚠️ **Risk Alerts Page** – View flagged high-return-risk orders from the database  
 - 📦 **High Freight Orders** – View orders with freight cost over a threshold  
-- 🔄 **Auto-refresh enabled** – New risky orders added in MySQL will reflect every 10 seconds  
+- 🔄 **Auto-refresh enabled** – New risky orders added in database will reflect every 10 seconds  
 - 💡 **Expandable** – Add dashboard, filters, or charts with Streamlit/Plotly later
 
 ## 📁 Folder Structure
@@ -31,6 +31,7 @@ Ecommerce platforms deal with massive return volumes. To minimize profit loss, t
 return-risk-analyzer/
 │
 ├── risk_analyzer.py          # Flask backend with DB logic
+├── requirements.txt          # Dependencies used
 ├── .env                      # Environment variables (DB creds, secret keys)
 ├── .gitignore                # Ignore .env, __pycache__, etc.
 ├── schema.sql                # (Optional) MySQL table structure
